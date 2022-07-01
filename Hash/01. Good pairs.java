@@ -10,13 +10,26 @@ class Solution {
                 map.put(nums[i],1);
         }
         
+        // for [1,2,3,1,1,3] HM will be = e.g {1=3, 2=1, 3=1}
+        
         int pairs = 0;
         
+        // for[1,2,3,1,1,3]  map.values() = 3 1 1 2
         for(int num:map.values())
         {
             int count = (num * (num-1)/2);
             pairs+=count;
         }
+        /*
+        3 1 1 2
+        3 * (3-1) / 2 = 3* 2/2 = 3
+        1 * (1-1) / 2 = 1* 0/2 = 0
+        1 * (1-1) / 2 = 1* 0/2 = 0
+        2 * (2-1) / 2 = 2* 1/2 = 1
+        3+1 =4
+        pair are 
+        1 1, 1 1, 1 1, 3 3 == 4 pairs
+        */
  
         return pairs;
         
